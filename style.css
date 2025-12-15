@@ -135,6 +135,13 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
     margin: 10px 0 0;
 }
 
+.profile .profile-phone {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 13px;
+    color: var(--muted);
+    margin: 10px 0 0;
+}
+
 .profile .social {
     display: flex;
     justify-content: center;
