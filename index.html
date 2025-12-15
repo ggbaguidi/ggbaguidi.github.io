@@ -3,47 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ahonakpon Guy Gbaguidi - Software Engineer, AI/ML Developer & Aspiring Researcher specializing in Machine Learning, Computer Vision, and Data Science">
+    <meta name="description" content="Ahonakpon Guy Gbaguidi - Software Engineer, AI/ML Developer & Aspiring Researcher">
     <meta name="author" content="Ahonakpon Guy Gbaguidi">
-    <title>Ahonakpon Guy Gbaguidi | AI Engineer & Researcher</title>
+    <title>Ahonakpon Guy Gbaguidi</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Top bar -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">Ahonakpon Guy Gbaguidi</div>
-            <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
+            <div class="nav-brand">A. G. Gbaguidi</div>
+            <ul class="nav-menu" aria-label="Primary">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#news">News</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Intro (two-column academic layout) -->
+    <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Ahonakpon Guy Gbaguidi</h1>
-                <p class="hero-subtitle">Software Engineer | AI/ML Developer | Aspiring Researcher</p>
-                <p class="hero-description">Developing AI solutions for real-world impact, specializing in Computer Vision, NLP, and MLOps</p>
-                <div class="hero-location">📍 Cotonou, Benin</div>
-                <div class="hero-links">
-                    <a href="https://github.com/ggbaguidi" target="_blank" class="btn">GitHub</a>
-                    <a href="https://linkedin.com/in/aggbaguidi" target="_blank" class="btn">LinkedIn</a>
-                    <a href="mailto:guygbaguidi123root@gmail.com" class="btn btn-primary">Contact Me</a>
+            <div class="intro-grid">
+                <aside class="profile">
+                    <div class="avatar" aria-label="Profile photo placeholder">
+                        <span>GG</span>
+                    </div>
+                    <h1>Ahonakpon Guy Gbaguidi</h1>
+                    <p class="profile-title">Software Engineer (Backend) | AI/ML Developer | Aspiring Researcher</p>
+                    <p class="profile-affil">Cotonou, Benin</p>
+                    <p class="profile-email">guygbaguidi123root (at) gmail.com</p>
+                    <div class="social" aria-label="Social links">
+                        <a href="https://github.com/ggbaguidi" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://linkedin.com/in/aggbaguidi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="mailto:guygbaguidi123root@gmail.com">Email</a>
+                    </div>
+                </aside>
+
+                <div class="intro-text">
+                    <p>I build <strong>reliable software</strong> and <strong>applied AI systems</strong>, with a focus on Computer Vision, NLP, and MLOps.</p>
+                    <p>I earned a B.Sc. in Software Engineering at the University of Abomey-Calavi (First Class Honours) and have worked on production backends and ML pipelines, including LLM-based information extraction for healthcare.</p>
+                    <p>My research interests include AI for robotics, reasoning under constraints, and multi-objective optimization for sustainability-focused systems.</p>
+
+                    <div class="callout">Open to research collaborations, internships, and engineering opportunities.</div>
+
+                    <div class="news-wrap" id="news">
+                        <div class="news-title">News</div>
+                        <ul class="news-list" id="newsList">
+                            <li><span class="news-date">[Dec. 2025]</span>Joined the GitHub Education Program as a student developer.</li>
+                            <li><span class="news-date">[Nov. 2025]</span>3rd place in the ANIP Kaggle Challenge (Facial Recognition, Age Estimation & OCR).</li>
+                            <li><span class="news-date">[Oct. 2025]</span>Selected for the IOM Climate Mobility Innovation Challenge.</li>
+                            <li><span class="news-date">[Aug. 2025]</span>Fully-funded participant at Deep Learning Indaba 2025 (Kigali, Rwanda).</li>
+                            <li><span class="news-date">[Aug. 2025]</span>Selected for the Reach For Gold Social Impact Fellowship.</li>
+                            <li><span class="news-date">[Mar. 2025]</span>Contributed to an AI flood prediction project at Innovation Crunch Time (University of Lomé).</li>
+                        </ul>
+                        <a class="news-toggle" id="newsToggle" href="#news" role="button" aria-controls="newsList">Show more</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <div class="container"><div class="rule"></div></div>
+
+    <!-- About -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">About</h2>
             <div class="about-content">
                 <p>I'm a software engineer and AI/ML developer passionate about leveraging technology for social impact. With a B.Sc. in Software Engineering from University of Abomey-Calavi (First Class Honours), I focus on building intelligent systems that solve real-world problems.</p>
                 <p>My journey started at EEIA 2021 summer school where I discovered the power of AI to transform lives. Since then, I've competed in national AI challenges, built production ML systems, and contributed to open-source projects. My current interests lie at the intersection of reinforcement learning, computer vision, and sustainable technology solutions.</p>
@@ -51,47 +81,6 @@
             </div>
         </div>
     </section>
-
-    <!-- News/Updates Feed -->
-    <section id="news" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Latest Updates</h2>
-            <div class="news-grid">
-                <div class="news-item">
-                    <div class="news-date">December 2025</div>
-                    <div class="news-content">
-                        <h3>🚀 Joined GitHub Education Program</h3>
-                        <p>Accepted into GitHub Education as a student developer, gaining access to industry-standard tools and resources for open-source development</p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">November 2025</div>
-                    <div class="news-content">
-                        <h3>🥉 3rd Place - ANIP Kaggle Challenge</h3>
-                        <p>Placed 3rd in ANIP Benin's national competition on Facial Recognition, Age Estimation & OCR, developing Deep Learning models for GovTech identity security</p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">October 2025</div>
-                    <div class="news-content">
-                        <h3>🌍 Selected for IOM Climate Mobility Innovation Challenge</h3>
-                        <p>Chosen for the Infrastructure, Climate Change and Human Mobility Design and Innovation Challenge in partnership with African Leadership Academy and International Organization for Migration</p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">August 2025</div>
-                    <div class="news-content">
-                        <h3>🎓 Deep Learning Indaba 2025 - Kigali, Rwanda</h3>
-                        <p>Fully-funded participation in Africa's premier machine learning conference, connecting with researchers and practitioners across the continent</p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">August 2025</div>
-                    <div class="news-content">
-                        <h3>🌟 Reach For Gold Social Impact Fellowship</h3>
-                        <p>Selected from over 1,000 applicants across 91 countries for a 10-week social innovation program</p>
-                    </div>
-                </div>
                 <div class="news-item">
                     <div class="news-date">March 2025</div>
                     <div class="news-content">
