@@ -14,13 +14,17 @@ html { scroll-behavior: smooth; }
     --link-hover: #1e40af;
     --callout-bg: #f9fafb;
     --radius: 8px;
+
+    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-heading: var(--font-sans);
 }
 
 body {
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font: 16px/1.65 var(--font-sans);
 }
 
 a { color: var(--link); text-decoration: none; }
@@ -107,13 +111,13 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 }
 
 .avatar span {
-    font: 700 34px/1 "Georgia", "Times New Roman", serif;
+    font: 800 34px/1 var(--font-heading);
     color: var(--navy);
 }
 
 .profile h1 {
     margin: 10px 0 6px;
-    font: 700 26px/1.25 "Georgia", "Times New Roman", serif;
+    font: 800 26px/1.25 var(--font-heading);
 }
 
 .profile .profile-title {
@@ -129,14 +133,14 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 }
 
 .profile .profile-email {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 13px;
     color: var(--muted);
     margin: 10px 0 0;
 }
 
 .profile .profile-phone {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 13px;
     color: var(--muted);
     margin: 10px 0 0;
@@ -199,12 +203,12 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 
 .section-title {
     margin: 0 0 14px;
-    font: 700 22px/1.25 "Georgia", "Times New Roman", serif;
+    font: 800 20px/1.25 var(--font-heading);
 }
 
 .subsection-title {
     margin: 18px 0 10px;
-    font: 700 18px/1.25 "Georgia", "Times New Roman", serif;
+    font: 800 17px/1.25 var(--font-heading);
 }
 
 .rule {
@@ -220,7 +224,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 .news-wrap { margin-top: 18px; }
 
 .news-title {
-    font: 700 20px/1.25 "Georgia", "Times New Roman", serif;
+    font: 800 18px/1.25 var(--font-heading);
     margin: 22px 0 8px;
 }
 
@@ -276,7 +280,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 .timeline-content h3,
 .award-item h3,
 .edu-card h3 {
-    font: 700 17px/1.35 "Georgia", "Times New Roman", serif;
+    font: 800 16px/1.35 var(--font-heading);
     margin: 0 0 4px;
 }
 
