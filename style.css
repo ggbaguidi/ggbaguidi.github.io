@@ -90,7 +90,7 @@ h1 em, h2 em { color: var(--lime); font-family: var(--serif); font-weight: 600; 
 .organization-logo:hover { opacity: .72; }
 .organization-logo + p { color: rgba(11,23,21,.55); font: 10px var(--mono); letter-spacing: .04em; text-transform: uppercase; }
 .organization-logo ~ h2 { margin-top: 12px; }
-.cmu-logo { width: 172px; }.phytov-logo { width: 145px; }.tekbot-logo { width: 130px; }.mastercard-logo { width: 44px; }.isheero-logo { width: 155px; }.mcn-logo { width: 145px; }
+.cmu-logo { width: 172px; }.phytov-logo { width: 145px; }.nayldis-logo { width: 135px; }.tekbot-logo { width: 130px; }.mastercard-logo { width: 44px; }.isheero-logo { width: 155px; }.mcn-logo { width: 145px; }
 .indaba-logo { width: 175px; padding: 8px 11px; background: #111; }
 .text-mark { width: 44px; height: 44px; justify-content: center; color: var(--paper); background: var(--ink); font: 500 14px var(--mono); letter-spacing: -.1em; }
 .mastercard-mark { color: var(--ink); background: var(--lime); }
