@@ -1,46 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll for internal anchor links
-    document.querySelectorAll('a[href^="#"]').forEach((link) => {
-        link.addEventListener('click', (event) => {
-            const targetId = link.getAttribute('href');
-            if (!targetId || targetId === '#') return;
+  const menuButton = document.querySelector('.menu-button');
+  const navLinks = document.querySelector('.nav-links');
+  const progress = document.querySelector('.page-progress span');
+  const cursorGlow = document.querySelector('.cursor-glow');
 
-            const target = document.querySelector(targetId);
-            if (!target) return;
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-            event.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
+  if (menuButton && navLinks) {
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+      navLinks.classList.toggle('open', !isOpen);
     });
 
-    // News: show more / show less (classic academic page behavior)
-    const newsList = document.getElementById('newsList');
-    const newsToggle = document.getElementById('newsToggle');
-    if (!newsList || !newsToggle) return;
+    navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation');
+      navLinks.classList.remove('open');
+    }));
+  }
 
-    const items = Array.from(newsList.querySelectorAll('li'));
-    const initialCount = 4;
+  const updateProgress = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = `${scrollable ? (window.scrollY / scrollable) * 100 : 0}%`;
+  };
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
 
-    if (items.length <= initialCount) {
-        newsToggle.style.display = 'none';
-        return;
-    }
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 
-    let collapsed = true;
-
-    const applyState = () => {
-        items.forEach((item, index) => {
-            item.style.display = collapsed && index >= initialCount ? 'none' : '';
-        });
-        newsToggle.textContent = collapsed ? 'Show more' : 'Show less';
-        newsToggle.setAttribute('aria-expanded', String(!collapsed));
-    };
-
-    newsToggle.addEventListener('click', (event) => {
-        event.preventDefault();
-        collapsed = !collapsed;
-        applyState();
-    });
-
-    applyState();
+    window.addEventListener('pointermove', (event) => {
+      if (!cursorGlow) return;
+      cursorGlow.style.opacity = '1';
+      cursorGlow.style.left = `${event.clientX}px`;
+      cursorGlow.style.top = `${event.clientY}px`;
+    }, { passive: true });
+  } else {
+    document.querySelectorAll('.reveal').forEach((element) => element.classList.add('visible'));
+  }
 });
