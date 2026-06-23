@@ -2,9 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.querySelector('.menu-button');
   const navLinks = document.querySelector('.nav-links');
   const progress = document.querySelector('.page-progress span');
-  const cursorGlow = document.querySelector('.cursor-glow');
+  const form = document.querySelector('#contact-form');
 
-  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('[data-year]').forEach((year) => {
+    year.textContent = new Date().getFullYear();
+  });
 
   if (menuButton && navLinks) {
     menuButton.addEventListener('click', () => {
@@ -13,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
       menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
       navLinks.classList.toggle('open', !isOpen);
     });
-
     navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
       menuButton.setAttribute('aria-expanded', 'false');
       menuButton.setAttribute('aria-label', 'Open navigation');
@@ -36,16 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
-
-    window.addEventListener('pointermove', (event) => {
-      if (!cursorGlow) return;
-      cursorGlow.style.opacity = '1';
-      cursorGlow.style.left = `${event.clientX}px`;
-      cursorGlow.style.top = `${event.clientY}px`;
-    }, { passive: true });
   } else {
     document.querySelectorAll('.reveal').forEach((element) => element.classList.add('visible'));
+  }
+
+  if (form) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const subject = `[Website] ${data.get('subject')}`;
+      const body = `Hello Guy,\n\n${data.get('message')}\n\n— ${data.get('name')}\n${data.get('email')}`;
+      window.location.href = `mailto:guygbaguidi123root@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
   }
 });
