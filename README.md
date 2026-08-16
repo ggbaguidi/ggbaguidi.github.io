@@ -19,5 +19,6 @@ Then open `http://localhost:8000`.
 - `script.js` — theme, mobile navigation, section state, and BibTeX interactions
 - `data/portrait.webp` — optimized profile image
 - `data/Ahonakpon_Gbaguidi_CV.pdf` — current CV
+- `data/fonts/` — self-hosted MathJax fonts and their license
 
 The former page URLs remain as small redirects to their matching sections so existing links continue to work.
