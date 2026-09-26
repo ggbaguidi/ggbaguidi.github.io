@@ -84,7 +84,8 @@ img, svg { display: block; max-width: 100%; }
 .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
 .session-spacer { flex: 1; }
 
-.intro { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: clamp(28px, 6vw, 76px); padding: 30px 0 58px; }
+.intro { padding: 30px 0 58px; }
+.intro-copy { display: flow-root; }
 .command-line { display: flex; gap: 0; align-items: center; margin: 0 0 20px; color: var(--text); font-size: 13px; }
 .prompt-user { color: var(--accent); font-weight: 700; }
 .prompt-path { margin-right: 9px; color: var(--warm); font-weight: 700; }
@@ -93,10 +94,10 @@ img, svg { display: block; max-width: 100%; }
 .intro h1 { margin: 0 0 15px; color: var(--accent-strong); font-size: clamp(2.8rem, 5.7vw, 5.2rem); line-height: 1.03; font-weight: 700; letter-spacing: -.065em; }
 .role { margin: 0 0 30px; color: var(--warm); font-size: 13px; font-weight: 700; }
 .role::before { content: '> '; color: var(--accent); }
-.intro-copy > p:not(.role, .command-line) { max-width: 70ch; margin: 0 0 15px; color: var(--muted); }
+.intro-copy > p:not(.role, .command-line) { margin: 0 0 15px; color: var(--muted); }
 .intro-copy > p:not(.role, .command-line)::before { content: '// '; color: var(--faint); }
 .intro a:not(.pill) { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
-.portrait-desktop { align-self: start; margin: 23px 0 0; padding: 8px; border: 1px solid var(--line); background: var(--surface); box-shadow: 10px 10px 0 color-mix(in srgb, var(--accent) 7%, transparent); }
+.portrait-desktop { float: right; width: clamp(210px, 28%, 300px); margin: 0 0 22px 36px; padding: 8px; border: 1px solid var(--line); background: var(--surface); box-shadow: 10px 10px 0 color-mix(in srgb, var(--accent) 7%, transparent); }
 .portrait-desktop img, .portrait-mobile img { width: 100%; height: 315px; object-fit: cover; object-position: 50% 42%; filter: saturate(.82) contrast(1.06); }
 .portrait-desktop figcaption { display: flex; justify-content: space-between; padding: 9px 3px 2px; color: var(--faint); font-size: 10px; }
 .portrait-desktop figcaption span { color: var(--accent); }
@@ -210,6 +211,7 @@ img, svg { display: block; max-width: 100%; }
 .contact-band h2 { margin: 0 0 7px; color: var(--text); font-size: 13px; line-height: 1.5; }
 .contact-band h2::before { content: 'guy@portfolio:~$ '; color: var(--accent); font-size: inherit; }
 .contact-band p { margin: 0; color: var(--muted); font-size: 11px; }
+main p:not(.command-line, .role, .section-note, .kicker, .byline) { text-align: justify; hyphens: auto; }
 .contact-addresses { display: grid; justify-items: end; gap: 7px; }
 .contact-addresses a { font-size: 11px; white-space: nowrap; }
 .contact-addresses a::before { content: '→ '; color: var(--accent); }
@@ -230,7 +232,8 @@ img, svg { display: block; max-width: 100%; }
   .nav-links { position: absolute; top: 54px; right: 0; left: 0; display: none; padding: 12px 24px 20px; border-bottom: 1px solid var(--line); background: var(--surface); }
   .nav-links.open { display: grid; gap: 0; }
   .nav-links a { padding: 9px 0; font-size: 13px; }
-  .intro { grid-template-columns: minmax(0, 1fr) 220px; gap: 24px; padding-top: 48px; }
+  .intro { padding-top: 48px; }
+  .portrait-desktop { margin-left: 24px; }
   .portrait-desktop img { height: 240px; }
 }
 @media (max-width: 650px) {
