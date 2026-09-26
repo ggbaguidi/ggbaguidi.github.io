@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ahonakpon Guy Gbaguidi is a software engineer and AI researcher working on robotics, reliable AI, and intelligent systems for African contexts.">
-  <meta name="theme-color" content="#101113">
+  <meta name="theme-color" content="#1b1b1b">
   <meta property="og:title" content="Ahonakpon Guy Gbaguidi">
   <meta property="og:description" content="Software engineer and AI researcher at Carnegie Mellon University Africa.">
   <meta property="og:type" content="website">
@@ -12,28 +12,30 @@
   <title>Ahonakpon Guy Gbaguidi</title>
   <link rel="icon" href="data/favicon.svg" type="image/svg+xml">
   <script>
-    document.documentElement.dataset.theme = localStorage.getItem('theme') ||
-      (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';
   </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
+  <div class="terminal-window">
   <header class="site-header">
     <nav class="nav shell" aria-label="Main navigation">
-      <a class="wordmark" href="#about">Ahonakpon Gbaguidi</a>
+      <div class="window-identity">
+        <span class="window-controls" aria-hidden="true"><i></i><i></i><i></i></span>
+        <a class="wordmark" href="#about">guy@portfolio: ~</a>
+      </div>
       <div class="nav-actions">
         <button class="menu-toggle icon-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
         </button>
         <div class="nav-links" id="nav-links">
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
+          <a href="#about">about/</a>
+          <a href="#research">research/</a>
+          <a href="#projects">projects/</a>
+          <a href="#experience">experience/</a>
         </div>
-        <button class="theme-toggle icon-button" type="button" aria-label="Switch to light theme" title="Change colour theme">
+        <button class="theme-toggle icon-button" type="button" aria-label="Switch to light theme" title="Toggle terminal theme">
           <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/></svg>
           <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"/></svg>
         </button>
@@ -42,8 +44,27 @@
   </header>
 
   <main id="main" class="shell">
+    <div class="session-line" aria-label="Terminal session status"><span class="live-dot"></span> SESSION ACTIVE <span class="session-spacer"></span> <span>PORTFOLIO / V2.0</span></div>
+    <section class="command-panel" aria-label="Interactive terminal prompt">
+      <form class="terminal-form" autocomplete="off">
+        <div class="prompt-top" aria-hidden="true">
+          <span class="prompt-linux">🐧</span><span class="prompt-location">⌂ &nbsp;~</span>
+          <span class="prompt-trail"></span>
+          <span class="prompt-check">✓</span>
+          <time class="prompt-clock">at --:--:--</time>
+        </div>
+        <div class="prompt-entry">
+          <span class="prompt-chevron" aria-hidden="true">❯</span>
+          <label class="sr-only" for="terminal-input">Terminal command</label>
+          <input id="terminal-input" name="command" type="text" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="type help and press Enter" maxlength="80">
+          <button type="submit" aria-label="Run command">↵</button>
+        </div>
+      </form>
+      <div class="terminal-output" role="status" aria-live="polite">Available: <button type="button" data-command="about">about</button> <button type="button" data-command="research">research</button> <button type="button" data-command="projects">projects</button> <button type="button" data-command="experience">experience</button> <button type="button" data-command="contact">contact</button></div>
+    </section>
     <section class="intro" id="about" aria-labelledby="intro-title">
       <div class="intro-copy">
+        <p class="command-line"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~$</span> whoami<span class="cursor" aria-hidden="true"></span></p>
         <h1 id="intro-title">Ahonakpon Guy<br>Gbaguidi</h1>
         <p class="role">M.S. student in Engineering Artificial Intelligence at CMU-Africa</p>
 
@@ -77,13 +98,16 @@
 
       <figure class="portrait-desktop">
         <img src="data/portrait.webp" alt="Portrait of Ahonakpon Guy Gbaguidi" width="900" height="1050">
+        <figcaption>profile.webp <span>● online</span></figcaption>
       </figure>
     </section>
 
-    <section class="section" aria-labelledby="news-title">
-      <h2 class="section-label" id="news-title">News</h2>
+    <section class="section" id="news" aria-labelledby="news-title">
+      <h2 class="section-label" id="news-title" aria-label="News">cat news.txt</h2>
       <ol class="news-list">
+        <li><time datetime="2026-08">Aug 2026</time><p>Officially began the fall semester of the M.S. in Engineering Artificial Intelligence program at Carnegie Mellon University Africa.</p></li>
         <li><time datetime="2026-07">Jul 2026</time><p>Completed the English Enhancement Program at Carnegie Mellon University Africa.</p></li>
+        <li><time datetime="2026-04">Apr 2026</time><p>Received admission to the M.S. in Engineering Artificial Intelligence program at Carnegie Mellon University Africa.</p></li>
         <li><time datetime="2026-03">Mar 2026</time><p>Published first-author research on <a href="https://digitalmanuscriptpedia.com/conferences/index.php/DMP-LNMR/article/view/78" target="_blank" rel="noopener noreferrer">machine learning-driven energy optimization for sustainable telecommunications</a>.</p></li>
         <li><time datetime="2025-11">Nov 2025</time><p>Received provisional acceptance for the IMPACT 2026 conference proceedings.</p></li>
         <li><time datetime="2025-11">Nov 2025</time><p>Placed third in the ANIP Benin Kaggle Challenge for facial analysis, age estimation, and OCR.</p></li>
@@ -95,7 +119,7 @@
 
     <section class="section" id="research" aria-labelledby="research-title">
       <div class="section-topline">
-        <h2 class="section-label" id="research-title">Research</h2>
+        <h2 class="section-label" id="research-title" aria-label="Research">cat research.txt</h2>
         <p class="section-note">Robotics · AI reliability · optimization</p>
       </div>
 
@@ -134,7 +158,7 @@
 
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section-topline">
-        <h2 class="section-label" id="projects-title">Selected projects</h2>
+        <h2 class="section-label" id="projects-title" aria-label="Selected projects">cat projects.txt</h2>
         <p class="section-note">Research projects and software</p>
       </div>
 
@@ -182,7 +206,7 @@
     </section>
 
     <section class="section" id="experience" aria-labelledby="experience-title">
-      <h2 class="section-label" id="experience-title">Experience</h2>
+      <h2 class="section-label" id="experience-title" aria-label="Experience">cat experience.txt</h2>
       <div class="experience-list">
         <article><time datetime="2026-08">Aug 2026–May 2028</time><div><h3>M.S. in Engineering Artificial Intelligence</h3><p>Carnegie Mellon University Africa · Kigali, Rwanda</p></div></article>
         <article><time datetime="2025-03">Mar 2025–Jan 2026</time><div><h3>Robotics Mentor</h3><p>TEKBOT Robotics · UCAO-TECH</p><p class="detail">Mentored teams in ROS, computer vision, software engineering, system integration, and testing.</p></div></article>
@@ -192,8 +216,8 @@
       </div>
     </section>
 
-    <section class="section skills-section" aria-labelledby="skills-title">
-      <h2 class="section-label" id="skills-title">Technical skills</h2>
+    <section class="section skills-section" id="skills" aria-labelledby="skills-title">
+      <h2 class="section-label" id="skills-title" aria-label="Technical skills">cat skills.txt</h2>
       <div class="skill-grid">
         <div><h3>Robotics &amp; AI</h3><p>ROS, computer vision, reinforcement learning, robot perception, search-based reasoning</p></div>
         <div><h3>Machine learning</h3><p>PyTorch, TensorFlow, Scikit-learn, JAX, AutoGluon, Hugging Face</p></div>
@@ -203,7 +227,7 @@
     </section>
 
     <section class="section service-section" id="service" aria-labelledby="service-title">
-      <h2 class="section-label" id="service-title">Community</h2>
+      <h2 class="section-label" id="service-title" aria-label="Community">cat community.txt</h2>
       <div class="service-copy">
         <p>I serve as Co-Lead of the iSHEERO Events Commission. I am also a Baobab Platform Ambassador for more than 300 Mastercard Foundation Scholars in Benin and a Student Award Leader for the Duke of Edinburgh’s International Award.</p>
         <p>I was a Millennium Fellow and Global Admissions Reviewer. I led a campus project on plastic waste and reviewed 57 university applications from Africa, Europe, and Asia.</p>
@@ -212,7 +236,7 @@
 
     <section class="contact-band" id="contact" aria-labelledby="contact-title">
       <div>
-        <h2 id="contact-title">Contact</h2>
+        <h2 id="contact-title" aria-label="Contact">cat contact.txt</h2>
         <p>I welcome questions about my research and software engineering work.</p>
       </div>
       <div class="contact-addresses">
@@ -226,6 +250,7 @@
     <span>© <span data-year></span> Ahonakpon Guy Gbaguidi</span>
     <span>Kigali, Rwanda</span>
   </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
