@@ -1,138 +1,111 @@
 const root = document.documentElement;
 const themeButton = document.querySelector('.theme-toggle');
 const themeMeta = document.querySelector('meta[name="theme-color"]');
+const form = document.querySelector('.terminal-form');
+const input = document.querySelector('#terminal-input');
+const output = document.querySelector('#command-output');
+const sections = ['about', 'news', 'research', 'projects', 'experience', 'skills', 'community', 'contact'];
+const aliases = { service: 'community', organizations: 'community', work: 'experience', home: 'about' };
+const completions = ['help', 'ls', 'pwd', 'whoami', 'date', 'theme', 'clear', 'cv', 'github', 'email', ...sections, ...sections.filter(name => name !== 'about').map(name => `cat ${name}.txt`), 'tree projects/'];
+const history = [];
+let historyIndex = 0;
 
-function syncThemeButton() {
-  const light = root.dataset.theme === 'light';
-  themeButton?.setAttribute('aria-label', `Switch to ${light ? 'dark' : 'light'} theme`);
-  themeMeta?.setAttribute('content', light ? '#f8f8f8' : '#1b1b1b');
+function setTheme(theme) {
+  root.dataset.theme = theme;
+  themeButton.textContent = `theme: ${theme}`;
+  themeButton.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
+  themeMeta?.setAttribute('content', theme === 'dark' ? '#1b1b1b' : '#f1f0eb');
+  try { localStorage.setItem('theme', theme); } catch (_) {}
 }
+setTheme(root.dataset.theme === 'light' ? 'light' : 'dark');
+themeButton.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
 
-themeButton?.addEventListener('click', () => {
-  root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
-  localStorage.setItem('theme', root.dataset.theme);
-  syncThemeButton();
-});
-syncThemeButton();
-
-const menuButton = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-menuButton?.addEventListener('click', () => {
-  const open = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!open));
-  menuButton.setAttribute('aria-label', open ? 'Open navigation' : 'Close navigation');
-  navLinks?.classList.toggle('open', !open);
-});
-
-navLinks?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    menuButton?.setAttribute('aria-expanded', 'false');
-    menuButton?.setAttribute('aria-label', 'Open navigation');
-    navLinks.classList.remove('open');
-  });
-});
-
-const observedSections = [...document.querySelectorAll('main section[id]')];
-const navAnchors = [...document.querySelectorAll('.nav-links a')];
-const sectionObserver = new IntersectionObserver((entries) => {
-  const visible = entries
-    .filter((entry) => entry.isIntersecting)
-    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-  if (!visible) return;
-  navAnchors.forEach((link) => {
-    link.classList.toggle('active', link.getAttribute('href') === `#${visible.target.id}`);
-  });
-}, { rootMargin: '-15% 0px -70% 0px', threshold: [0, .25, .5] });
-observedSections.forEach((section) => sectionObserver.observe(section));
+document.querySelectorAll('[data-year]').forEach(node => { node.textContent = new Date().getFullYear(); });
+const sessionDate = document.querySelector('#session-date');
+if (sessionDate) {
+  const now = new Date();
+  sessionDate.dateTime = now.toISOString();
+  sessionDate.textContent = new Intl.DateTimeFormat('en-US', { weekday: 'short', month: 'short', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Kigali' }).format(now);
+}
 
 const bibtexButton = document.querySelector('.bibtex-toggle');
 const bibtex = document.querySelector('#bibtex');
 bibtexButton?.addEventListener('click', () => {
   const open = bibtexButton.getAttribute('aria-expanded') === 'true';
   bibtexButton.setAttribute('aria-expanded', String(!open));
+  bibtexButton.textContent = open ? '[bibtex +]' : '[bibtex −]';
   bibtex.hidden = open;
 });
 
-document.querySelectorAll('[data-year]').forEach((node) => {
-  node.textContent = new Date().getFullYear();
-});
-
-const terminalForm = document.querySelector('.terminal-form');
-const terminalInput = document.querySelector('#terminal-input');
-const terminalOutput = document.querySelector('.terminal-output');
-const promptClock = document.querySelector('.prompt-clock');
-const sectionNames = ['about', 'news', 'research', 'projects', 'experience', 'skills', 'service', 'contact'];
-const sectionAliases = { community: 'service', organizations: 'service', work: 'experience' };
-
-function updatePromptClock() {
-  if (!promptClock) return;
-  promptClock.textContent = `at ${new Intl.DateTimeFormat('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Africa/Kigali' }).format(new Date())}`;
+function say(message, error = false) {
+  output.textContent = message;
+  output.classList.toggle('has-error', error);
 }
-updatePromptClock();
-if (promptClock) setInterval(updatePromptClock, 1000);
 
-function runCommand(rawCommand) {
-  const command = rawCommand.trim().toLowerCase().replace(/\s+/g, ' ');
+function jumpTo(name) {
+  document.getElementById(name)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  say(`~/${name === 'projects' ? 'projects/' : `${name}.txt`}`);
+}
+
+function runCommand(raw) {
+  const command = raw.trim().toLowerCase().replace(/\s+/g, ' ');
   if (!command) return;
-  terminalOutput.classList.remove('has-error');
+  history.push(raw.trim());
+  historyIndex = history.length;
 
-  const targetName = command.replace(/^(cd|open|cat)\s+/, '').replace(/^\.\//, '').replace(/\/$/, '').replace(/\.txt$/, '');
-  const section = sectionAliases[targetName] || targetName;
-  if (sectionNames.includes(section)) {
-    document.getElementById(section)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    terminalOutput.textContent = `Opening ~/${section}/`;
-    return;
-  }
+  let target = command.replace(/^(cat|cd|open)\s+/, '').replace(/^\.\//, '').replace(/^~\//, '').replace(/\/$/, '').replace(/\.txt$/, '');
+  target = aliases[target] || target;
+  if (sections.includes(target)) { jumpTo(target); return; }
+  if (command === 'tree' || command === 'tree projects' || command === 'tree projects/') { jumpTo('projects'); return; }
 
   switch (command) {
     case 'help':
-      terminalOutput.textContent = 'Commands: ls, pwd, whoami, about, news, research, projects, experience, skills, community, contact, cv, github, email, theme, clear. You can also use cat <section>.txt or cd <section>.';
+      say('Commands: help · ls · whoami · cat <file>.txt · tree projects/ · pwd · date · theme · cv · github · email · clear. Use ↑ for history and Tab to complete.');
       break;
-    case 'ls':
-      terminalOutput.textContent = sectionNames.map((name) => `${name}/`).join('  ');
+    case 'ls': case 'ls -l': case 'ls -la':
+      document.getElementById('directory')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      say('8 entries in ~/portfolio');
       break;
-    case 'pwd':
-      terminalOutput.textContent = '/home/guy/portfolio';
-      break;
-    case 'whoami':
-      terminalOutput.textContent = 'Ahonakpon Guy Gbaguidi — software engineer and AI researcher.';
-      break;
-    case 'theme':
-      themeButton?.click();
-      terminalOutput.textContent = `Theme switched to ${root.dataset.theme}.`;
-      break;
-    case 'cv':
-      window.open('data/Ahonakpon_Gbaguidi_CV.pdf', '_blank', 'noopener');
-      terminalOutput.textContent = 'Opening CV…';
-      break;
+    case 'pwd': say('/home/guy/portfolio'); break;
+    case 'whoami': jumpTo('about'); break;
+    case 'date': say(new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'medium', timeZone: 'Africa/Kigali' }).format(new Date()) + ' CAT'); break;
+    case 'theme': setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'); say(`Theme: ${root.dataset.theme}`); break;
+    case 'cv': case 'cat cv.pdf': case 'open cv.pdf':
+      window.open('data/Ahonakpon_Gbaguidi_CV.pdf', '_blank', 'noopener'); say('Opening cv.pdf…'); break;
     case 'github':
-      window.open('https://github.com/ggbaguidi', '_blank', 'noopener');
-      terminalOutput.textContent = 'Opening GitHub…';
-      break;
+      window.open('https://github.com/ggbaguidi', '_blank', 'noopener'); say('Opening GitHub…'); break;
     case 'email':
-      window.location.href = 'mailto:agbaguid@andrew.cmu.edu';
-      terminalOutput.textContent = 'Opening email…';
-      break;
+      window.location.href = 'mailto:agbaguid@andrew.cmu.edu'; say('Opening mail client…'); break;
     case 'clear':
-      terminalOutput.textContent = '';
-      break;
+      window.scrollTo({ top: 0, behavior: 'smooth' }); say(''); break;
     default:
-      terminalOutput.textContent = `Command not found: ${rawCommand.trim()}. Type help to see available commands.`;
-      terminalOutput.classList.add('has-error');
-      return;
+      say(`${raw.trim()}: command not found. Type help for available commands.`, true);
   }
-  terminalOutput.classList.remove('has-error');
 }
 
-terminalForm?.addEventListener('submit', (event) => {
+form?.addEventListener('submit', event => {
   event.preventDefault();
-  terminalOutput.classList.remove('has-error');
-  runCommand(terminalInput.value);
-  terminalInput.value = '';
+  runCommand(input.value);
+  input.value = '';
+});
+input?.addEventListener('keydown', event => {
+  if (event.key === 'ArrowUp' && history.length) {
+    event.preventDefault();
+    historyIndex = Math.max(0, historyIndex - 1);
+    input.value = history[historyIndex];
+  } else if (event.key === 'ArrowDown' && history.length) {
+    event.preventDefault();
+    historyIndex = Math.min(history.length, historyIndex + 1);
+    input.value = history[historyIndex] || '';
+  } else if (event.key === 'Tab') {
+    const value = input.value.toLowerCase();
+    const matches = completions.filter(item => item.startsWith(value));
+    if (value && matches.length === 1) { event.preventDefault(); input.value = matches[0]; }
+  } else if (event.key === 'Escape') {
+    input.value = '';
+  }
 });
 
-terminalOutput?.addEventListener('click', (event) => {
-  const button = event.target.closest('[data-command]');
-  if (button) runCommand(button.dataset.command);
+document.querySelectorAll('[data-command]').forEach(button => {
+  button.addEventListener('click', () => runCommand(button.dataset.command));
 });

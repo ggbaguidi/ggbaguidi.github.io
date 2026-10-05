@@ -3,254 +3,176 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ahonakpon Guy Gbaguidi is a software engineer and AI researcher working on robotics, reliable AI, and intelligent systems for African contexts.">
+  <meta name="description" content="Ahonakpon Guy Gbaguidi is a software engineer and AI researcher interested in spatial intelligence, 3D perception, world models, and robotics.">
   <meta name="theme-color" content="#1b1b1b">
   <meta property="og:title" content="Ahonakpon Guy Gbaguidi">
-  <meta property="og:description" content="Software engineer and AI researcher at Carnegie Mellon University Africa.">
+  <meta property="og:description" content="Software engineer and Engineering AI student at Carnegie Mellon University Africa.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="data/portrait.webp">
-  <title>Ahonakpon Guy Gbaguidi</title>
+  <meta property="og:image" content="https://gbaguidi.me/data/portrait.webp">
+  <title>Ahonakpon Guy Gbaguidi — terminal</title>
   <link rel="icon" href="data/favicon.svg" type="image/svg+xml">
-  <script>
-    document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';
-  </script>
-  <link rel="stylesheet" href="style.css?v=e48d9b2">
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark'; } catch (_) {}</script>
+  <link rel="stylesheet" href="style.css?v=cli-20261005">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="terminal-window">
-  <header class="site-header">
-    <nav class="nav shell" aria-label="Main navigation">
-      <div class="window-identity">
-        <span class="window-controls" aria-hidden="true"><i></i><i></i><i></i></span>
-        <a class="wordmark" href="#about">guy@portfolio: ~</a>
-      </div>
-      <div class="nav-actions">
-        <button class="menu-toggle icon-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
-          <span></span><span></span><span></span>
-        </button>
-        <div class="nav-links" id="nav-links">
-          <a href="#about">about/</a>
-          <a href="#research">research/</a>
-          <a href="#projects">projects/</a>
-          <a href="#experience">experience/</a>
-        </div>
-        <button class="theme-toggle icon-button" type="button" aria-label="Switch to light theme" title="Toggle terminal theme">
-          <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/></svg>
-          <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"/></svg>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <main id="main" class="shell">
-    <div class="session-line" aria-label="Terminal session status"><span class="live-dot"></span> SESSION ACTIVE <span class="session-spacer"></span> <span>PORTFOLIO / V2.0</span></div>
-    <section class="command-panel" aria-label="Interactive terminal prompt">
-      <form class="terminal-form" autocomplete="off">
-        <div class="prompt-top" aria-hidden="true">
-          <span class="prompt-linux">🐧</span><span class="prompt-location">⌂ &nbsp;~</span>
-          <span class="prompt-trail"></span>
-          <span class="prompt-check">✓</span>
-          <time class="prompt-clock">at --:--:--</time>
-        </div>
-        <div class="prompt-entry">
-          <span class="prompt-chevron" aria-hidden="true">❯</span>
-          <label class="sr-only" for="terminal-input">Terminal command</label>
-          <input id="terminal-input" name="command" type="text" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="type help and press Enter" maxlength="80">
-          <button type="submit" aria-label="Run command">↵</button>
-        </div>
-      </form>
-      <div class="terminal-output" role="status" aria-live="polite">Available: <button type="button" data-command="about">about</button> <button type="button" data-command="research">research</button> <button type="button" data-command="projects">projects</button> <button type="button" data-command="experience">experience</button> <button type="button" data-command="contact">contact</button></div>
-    </section>
-    <section class="intro" id="about" aria-labelledby="intro-title">
-      <div class="intro-copy">
-        <p class="command-line"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~$</span> whoami<span class="cursor" aria-hidden="true"></span></p>
-        <figure class="portrait-desktop">
-          <img src="data/portrait.webp" alt="Portrait of Ahonakpon Guy Gbaguidi" width="900" height="1050">
-          <figcaption>profile.webp <span>● online</span></figcaption>
-        </figure>
-        <h1 id="intro-title">Ahonakpon Guy<br>Gbaguidi</h1>
-        <p class="role">M.S. student in Engineering Artificial Intelligence at CMU-Africa</p>
-
-        <div class="portrait-mobile">
-          <img src="data/portrait.webp" alt="Portrait of Ahonakpon Guy Gbaguidi" width="900" height="1050">
-        </div>
-
-        <p>I am Guy Gbaguidi, a software engineer and AI researcher from Benin. I am pursuing an M.S. in Engineering Artificial Intelligence at <a href="https://www.africa.engineering.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University Africa</a> in Kigali.</p>
-
-        <p>I am interested in spatial intelligence, particularly how 3D perception, world models, and reasoning help robots understand their surroundings and act in them. I earned a B.Sc. in Software Engineering from the University of Abomey-Calavi as a Mastercard Foundation Scholar. My undergraduate research examined forecasting and energy-supply optimization for telecommunications sites. This work resulted in a first-author publication.</p>
-
-        <p>I develop systems that account for limits in available data and computing resources. I also mentor university robotics teams and help organize events for AI and data science professionals in Benin.</p>
-
-        <p>Research collaboration: I am seeking faculty advising and research projects in robotics. I am also available for software engineering projects. Please <a href="mailto:agbaguid@andrew.cmu.edu">contact me by email</a> if you would like to discuss related work.</p>
-
-        <div class="profile-links" aria-label="Profile links">
-          <a class="pill" href="mailto:agbaguid@andrew.cmu.edu">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg>CMU Email
-          </a>
-          <a class="pill" href="https://github.com/ggbaguidi" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8a9.2 9.2 0 0 0-2.9 17.9c.5.1.6-.2.6-.5v-1.8c-2.7.6-3.3-1.1-3.3-1.1-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 0 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.4-1.1.6-1.3-2.2-.2-4.5-1.1-4.5-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.8 0c1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.6 1 1.5 1 2.5 0 3.5-2.3 4.3-4.5 4.6.4.3.7.9.7 1.8v2.7c0 .4.2.6.7.5A9.2 9.2 0 0 0 12 2.8Z"/></svg>GitHub
-          </a>
-          <a class="pill" href="https://linkedin.com/in/aggbaguidi" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.5v10M5 5.5v.1M9.5 18.5v-6c0-2.2 3.5-3 3.5.2v5.8M13 13c0-2.4 4-3.7 5.5-.8.3.5.5 1.3.5 2.3v4"/></svg>LinkedIn
-          </a>
-          <a class="pill" href="data/Ahonakpon_Gbaguidi_CV.pdf" target="_blank" rel="noopener noreferrer">
-            <span class="cv-icon" aria-hidden="true">cv</span>CV
-          </a>
+  <div class="terminal">
+    <header class="terminal-header">
+      <div class="header-inner">
+        <a class="terminal-title" href="#top"><span class="header-glyph" aria-hidden="true">_</span> guy@portfolio<span class="header-path">: ~</span></a>
+        <div class="header-actions">
+          <span class="header-status"><span class="status-dot" aria-hidden="true"></span> online</span>
+          <button class="theme-toggle" type="button" aria-label="Switch to light theme">theme: dark</button>
         </div>
       </div>
-    </section>
+    </header>
 
-    <section class="section" id="news" aria-labelledby="news-title">
-      <h2 class="section-label" id="news-title" aria-label="News">cat news.txt</h2>
-      <ol class="news-list">
-        <li><time datetime="2026-08">Aug 2026</time><p>Officially began the fall semester of the M.S. in Engineering Artificial Intelligence program at Carnegie Mellon University Africa.</p></li>
-        <li><time datetime="2026-07">Jul 2026</time><p>Completed the English Enhancement Program at Carnegie Mellon University Africa.</p></li>
-        <li><time datetime="2026-04">Apr 2026</time><p>Received admission to the M.S. in Engineering Artificial Intelligence program at Carnegie Mellon University Africa.</p></li>
-        <li><time datetime="2026-03">Mar 2026</time><p>Published first-author research on <a href="https://digitalmanuscriptpedia.com/conferences/index.php/DMP-LNMR/article/view/78" target="_blank" rel="noopener noreferrer">machine learning-driven energy optimization for sustainable telecommunications</a>.</p></li>
-        <li><time datetime="2025-11">Nov 2025</time><p>Received provisional acceptance for the IMPACT 2026 conference proceedings.</p></li>
-        <li><time datetime="2025-11">Nov 2025</time><p>Placed third in the ANIP Benin Kaggle Challenge for facial analysis, age estimation, and OCR.</p></li>
-        <li><time datetime="2025-08">Aug 2025</time><p>Joined Deep Learning Indaba in Kigali as a fully funded participant and poster judge.</p></li>
-        <li><time datetime="2025-03">Mar 2025</time><p>Began mentoring university robotics teams through the TEKBOT Robotics Challenge.</p></li>
-        <li><time datetime="2024-12">Dec 2024</time><p>Graduated from the University of Abomey-Calavi with First Class Honours in Software Engineering.</p></li>
-      </ol>
-    </section>
-
-    <section class="section" id="research" aria-labelledby="research-title">
-      <div class="section-topline">
-        <h2 class="section-label" id="research-title" aria-label="Research">cat research.txt</h2>
-        <p class="section-note">Spatial intelligence · 3D perception · world models</p>
+    <main id="main" class="transcript">
+      <div id="top" class="welcome" aria-label="Terminal welcome">
+        <p>Last login: <time id="session-date"></time> on portfolio</p>
+        <p>Welcome to the personal terminal of Ahonakpon Guy Gbaguidi.</p>
+        <p class="welcome-hint">Type <button type="button" data-command="help">help</button> below, or select a file to explore.</p>
       </div>
 
-      <article class="feature-row publication">
-        <div class="feature-visual research-visual" aria-hidden="true">
-          <svg viewBox="0 0 240 150">
-            <path class="grid" d="M20 30h200M20 60h200M20 90h200M20 120h200M50 15v120M90 15v120M130 15v120M170 15v120M210 15v120"/>
-            <path class="chart-a" d="M22 112c24-5 33-43 57-39 24 3 26 28 48 25 24-4 29-66 51-64 18 2 22 28 40 25"/>
-            <path class="chart-b" d="M22 121c23-1 34-17 55-18 26-2 28 14 51 8 25-7 34-35 52-36 17-1 20 12 38 8"/>
-            <circle cx="178" cy="34" r="4"/><circle cx="128" cy="111" r="4"/>
-          </svg>
-          <span>forecast → optimize</span>
-        </div>
-        <div class="feature-copy">
-          <p class="kicker">First-author publication · March 2026</p>
-          <h3>Machine Learning-Driven Energy Optimization for Sustainable Telecommunications: A Multi-Algorithm Benchmark</h3>
-          <p class="byline"><strong>Ahonakpon Guy Gbaguidi</strong> and Eugène C. Ezin</p>
-          <p>DMPedia Lecture Notes in Multidisciplinary Research,  International Conference on Multidisciplinary Perspectives in Advanced Computing and Technology (IMPACT) 2026, pp. 419–429. The conference was held online on January 10–11, 2026, and was organized by the Department of Information Technology at G. B. Pant University of Agriculture and Technology, Uttarakhand, India.</p>
-          <div class="tag-row"><span>Forecasting</span><span>Multi-objective optimization</span><span>Green telecom</span></div>
-          <div class="small-links">
-            <a href="https://digitalmanuscriptpedia.com/conferences/index.php/DMP-LNMR/article/view/78" target="_blank" rel="noopener noreferrer">paper ↗</a>
-            <a href="https://doi.org/10.65890/dmp.lnmr.IMPACT26.78" target="_blank" rel="noopener noreferrer">doi ↗</a>
-            <button class="text-button bibtex-toggle" type="button" aria-expanded="false" aria-controls="bibtex">bibtex</button>
+      <section class="terminal-section identity" id="about" aria-labelledby="about-title">
+        <p class="prompt"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~$</span> whoami</p>
+        <div class="identity-layout">
+          <div class="identity-copy">
+            <h1 id="about-title">Ahonakpon Guy<br>Gbaguidi<span class="cursor" aria-hidden="true">_</span></h1>
+            <p class="identity-role">Software engineer <span class="divider">/</span> AI researcher</p>
+            <dl class="facts">
+              <div><dt>status</dt><dd>M.S. student in Engineering Artificial Intelligence</dd></div>
+              <div><dt>at</dt><dd><a href="https://www.africa.engineering.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University Africa</a></dd></div>
+              <div><dt>focus</dt><dd>Spatial intelligence, 3D perception, world models, robotics</dd></div>
+              <div><dt>location</dt><dd>Kigali, Rwanda <span class="muted">/ from Benin</span></dd></div>
+            </dl>
           </div>
+          <figure class="portrait">
+            <img src="data/portrait.webp" alt="Portrait of Ahonakpon Guy Gbaguidi" width="900" height="1050">
+            <figcaption>profile.webp <span>preview</span></figcaption>
+          </figure>
+        </div>
+        <div class="about-output">
+          <p>I am interested in spatial intelligence, particularly how 3D perception, world models, and reasoning help robots understand their surroundings and act in them. I earned a B.Sc. in Software Engineering from the University of Abomey-Calavi as a Mastercard Foundation Scholar.</p>
+          <p>My undergraduate research examined forecasting and energy-supply optimization for telecommunications sites and resulted in a first-author publication. I also mentor university robotics teams and help organize events for AI and data science professionals in Benin.</p>
+          <p>I am seeking faculty advising and research projects in robotics. I am also available for software engineering projects. <a href="mailto:agbaguid@andrew.cmu.edu">Get in touch ↗</a></p>
+        </div>
+      </section>
+
+      <section class="terminal-section directory" id="directory" aria-labelledby="directory-title">
+        <h2 class="prompt" id="directory-title"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~$</span> ls -la</h2>
+        <p class="output-muted">total 8 entries · select one to jump there</p>
+        <div class="file-list" aria-label="Portfolio files">
+          <a href="#news"><span class="permissions">-rw-r--r--</span><span class="file-name">news.txt</span><span class="file-description">updates and milestones</span></a>
+          <a href="#research"><span class="permissions">-rw-r--r--</span><span class="file-name">research.txt</span><span class="file-description">publication</span></a>
+          <a href="#projects"><span class="permissions">drwxr-xr-x</span><span class="file-name">projects/</span><span class="file-description">selected work</span></a>
+          <a href="#experience"><span class="permissions">-rw-r--r--</span><span class="file-name">experience.txt</span><span class="file-description">education and work</span></a>
+          <a href="#skills"><span class="permissions">-rw-r--r--</span><span class="file-name">skills.txt</span><span class="file-description">tools I use</span></a>
+          <a href="#community"><span class="permissions">-rw-r--r--</span><span class="file-name">community.txt</span><span class="file-description">people and service</span></a>
+          <a href="#contact"><span class="permissions">-rw-r--r--</span><span class="file-name">contact.txt</span><span class="file-description">reach me</span></a>
+          <a href="data/Ahonakpon_Gbaguidi_CV.pdf" target="_blank" rel="noopener noreferrer"><span class="permissions">-rw-r--r--</span><span class="file-name">cv.pdf</span><span class="file-description">open document ↗</span></a>
+        </div>
+      </section>
+
+      <section class="terminal-section" id="news" aria-labelledby="news-title">
+        <h2 class="prompt" id="news-title"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~$</span> cat news.txt</h2>
+        <p class="output-muted"># recent activity</p>
+        <ol class="news-list">
+          <li><time datetime="2026-08">2026.08</time><span>Started the fall semester of the M.S. in Engineering Artificial Intelligence program at Carnegie Mellon University Africa.</span></li>
+          <li><time datetime="2026-07">2026.07</time><span>Completed the English Enhancement Program at Carnegie Mellon University Africa.</span></li>
+          <li><time datetime="2026-04">2026.04</time><span>Received admission to the M.S. in Engineering Artificial Intelligence program at Carnegie Mellon University Africa.</span></li>
+          <li><time datetime="2026-03">2026.03</time><span>Published first-author research on <a href="https://digitalmanuscriptpedia.com/conferences/index.php/DMP-LNMR/article/view/78" target="_blank" rel="noopener noreferrer">machine learning-driven energy optimization ↗</a>.</span></li>
+          <li><time datetime="2025-11">2025.11</time><span>Received provisional acceptance for the IMPACT 2026 conference proceedings.</span></li>
+          <li><time datetime="2025-11">2025.11</time><span>Placed third in the ANIP Benin Kaggle Challenge for facial analysis, age estimation, and OCR.</span></li>
+          <li><time datetime="2025-08">2025.08</time><span>Joined Deep Learning Indaba in Kigali as a fully funded participant and poster judge.</span></li>
+          <li><time datetime="2025-03">2025.03</time><span>Began mentoring university robotics teams through the TEKBOT Robotics Challenge.</span></li>
+          <li><time datetime="2024-12">2024.12</time><span>Graduated from the University of Abomey-Calavi with First Class Honours in Software Engineering.</span></li>
+        </ol>
+      </section>
+
+      <section class="terminal-section" id="research" aria-labelledby="research-title">
+        <h2 class="prompt" id="research-title"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~$</span> cat research.txt</h2>
+        <p class="output-muted"># publication / first author / march 2026</p>
+        <article class="entry">
+          <h3>Machine Learning-Driven Energy Optimization for Sustainable Telecommunications: A Multi-Algorithm Benchmark</h3>
+          <p class="entry-meta">Ahonakpon Guy Gbaguidi and Eugène C. Ezin</p>
+          <p>DMPedia Lecture Notes in Multidisciplinary Research, IMPACT 2026, pp. 419–429. The work benchmarks forecasting and optimization methods for telecommunications sites.</p>
+          <p class="entry-links"><a href="https://digitalmanuscriptpedia.com/conferences/index.php/DMP-LNMR/article/view/78" target="_blank" rel="noopener noreferrer">[paper ↗]</a> <a href="https://doi.org/10.65890/dmp.lnmr.IMPACT26.78" target="_blank" rel="noopener noreferrer">[doi ↗]</a> <button class="bibtex-toggle" type="button" aria-expanded="false" aria-controls="bibtex">[bibtex +]</button></p>
           <pre id="bibtex" class="bibtex" hidden><code>@article{gbaguidi2026energy,
   title={Machine Learning-Driven Energy Optimization for Sustainable Telecommunications},
   author={Gbaguidi, Ahonakpon Guy and Ezin, Eugène C.},
   journal={DMPedia Lecture Notes in Multidisciplinary Research},
-  month={March},
   year={2026},
   doi={10.65890/dmp.lnmr.IMPACT26.78}
 }</code></pre>
+        </article>
+      </section>
+
+      <section class="terminal-section" id="projects" aria-labelledby="projects-title">
+        <h2 class="prompt" id="projects-title"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~$</span> tree projects/</h2>
+        <p class="output-muted">projects/</p>
+        <div class="project-tree">
+          <article class="tree-entry"><span class="tree-marker" aria-hidden="true">├──</span><div><h3>computer-vision/</h3><p>Facial analysis, age estimation, and OCR models for the ANIP Benin Kaggle Challenge. Third place, 2025.</p><p class="entry-meta">PyTorch · computer vision · OCR</p></div></article>
+          <article class="tree-entry"><span class="tree-marker" aria-hidden="true">├──</span><div><h3>tekbot-robotics/</h3><p>Led and mentored UCAO-TECH. Advised university teams on ROS, computer vision, integration, testing, and documentation.</p><p class="entry-meta">ROS · mentoring · systems integration</p></div></article>
+          <article class="tree-entry"><span class="tree-marker" aria-hidden="true">└──</span><div><h3>morabaraba-agent/</h3><p>Co-developed a minimax-based Python game agent. First place in the Mify Artificial Intelligence Contest.</p><p class="entry-meta">Python · minimax · search <a href="https://github.com/Charlot-DEDJINOU/MIFY-Maic2022-Contest" target="_blank" rel="noopener noreferrer">[source ↗]</a></p></div></article>
         </div>
-      </article>
-    </section>
+        <p class="output-muted">3 directories, 3 projects</p>
+      </section>
 
-    <section class="section" id="projects" aria-labelledby="projects-title">
-      <div class="section-topline">
-        <h2 class="section-label" id="projects-title" aria-label="Selected projects">cat projects.txt</h2>
-        <p class="section-note">Research projects and software</p>
+      <section class="terminal-section" id="experience" aria-labelledby="experience-title">
+        <h2 class="prompt" id="experience-title"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~$</span> cat experience.txt</h2>
+        <div class="timeline">
+          <article><time datetime="2026-08">2026–2028</time><div><h3>M.S. in Engineering Artificial Intelligence</h3><p>Carnegie Mellon University Africa · Kigali, Rwanda</p></div></article>
+          <article><time datetime="2025-03">2025–2026</time><div><h3>Robotics Mentor</h3><p>TEKBOT Robotics · UCAO-TECH</p><p>Mentored teams in ROS, computer vision, integration, and testing.</p></div></article>
+          <article><time datetime="2025-02">2025</time><div><h3>Full-Stack Developer, Backend and AI</h3><p>PhytoV · Cotonou, Benin</p><p>Built APIs and data services with FastAPI, PostgreSQL, React, and AWS; integrated language models into REST APIs.</p></div></article>
+          <article><time datetime="2024-01">2024</time><div><h3>Undergraduate Researcher</h3><p>University of Abomey-Calavi · IFRI</p><p>Developed forecasting and optimization methods for telecommunications energy systems.</p></div></article>
+          <article><time datetime="2023-08">2023</time><div><h3>Backend Software &amp; Data Engineer Intern</h3><p>Rintio · Cotonou, Benin</p><p>Processed travel data with Spark and MinIO and built a FastAPI authentication service.</p></div></article>
+        </div>
+      </section>
+
+      <section class="terminal-section" id="skills" aria-labelledby="skills-title">
+        <h2 class="prompt" id="skills-title"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~$</span> cat skills.txt</h2>
+        <dl class="skill-list">
+          <div><dt>robotics &amp; ai</dt><dd>ROS, computer vision, reinforcement learning, robot perception, search-based reasoning</dd></div>
+          <div><dt>machine learning</dt><dd>PyTorch, TensorFlow, Scikit-learn, JAX, AutoGluon, Hugging Face</dd></div>
+          <div><dt>engineering</dt><dd>Python, C/C++, SQL, JavaScript, FastAPI, React, Docker, AWS</dd></div>
+          <div><dt>data &amp; systems</dt><dd>PostgreSQL, MongoDB, Spark, Linux, Git, Elasticsearch</dd></div>
+        </dl>
+      </section>
+
+      <section class="terminal-section" id="community" aria-labelledby="community-title">
+        <h2 class="prompt" id="community-title"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~$</span> cat community.txt</h2>
+        <div class="prose-output">
+          <p>I serve as Co-Lead of the iSHEERO Events Commission and as a Baobab Platform Ambassador for more than 300 Mastercard Foundation Scholars in Benin. I am also a Student Award Leader for the Duke of Edinburgh’s International Award.</p>
+          <p>I was a Millennium Fellow and Global Admissions Reviewer. I led a campus project on plastic waste and reviewed 57 university applications from Africa, Europe, and Asia.</p>
+        </div>
+      </section>
+
+      <section class="terminal-section contact" id="contact" aria-labelledby="contact-title">
+        <h2 class="prompt" id="contact-title"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~$</span> cat contact.txt</h2>
+        <p>I welcome questions about research collaborations and software engineering work.</p>
+        <dl class="contact-list">
+          <div><dt>email</dt><dd><a href="mailto:agbaguid@andrew.cmu.edu">agbaguid@andrew.cmu.edu ↗</a></dd></div>
+          <div><dt>personal</dt><dd><a href="mailto:guygbaguidi123root@gmail.com">guygbaguidi123root@gmail.com ↗</a></dd></div>
+          <div><dt>github</dt><dd><a href="https://github.com/ggbaguidi" target="_blank" rel="noopener noreferrer">github.com/ggbaguidi ↗</a></dd></div>
+          <div><dt>linkedin</dt><dd><a href="https://linkedin.com/in/aggbaguidi" target="_blank" rel="noopener noreferrer">linkedin.com/in/aggbaguidi ↗</a></dd></div>
+          <div><dt>cv</dt><dd><a href="data/Ahonakpon_Gbaguidi_CV.pdf" target="_blank" rel="noopener noreferrer">Ahonakpon_Gbaguidi_CV.pdf ↗</a></dd></div>
+        </dl>
+      </section>
+      <footer class="terminal-footer"><span>guy@portfolio:~$ exit</span><span>logout · © <span data-year>2026</span> Ahonakpon Guy Gbaguidi</span></footer>
+    </main>
+
+    <div class="command-dock" role="region" aria-label="Terminal command line">
+      <div class="command-inner">
+        <div class="command-output" id="command-output" role="status" aria-live="polite">Try <button type="button" data-command="help">help</button>, <button type="button" data-command="ls">ls</button>, or <button type="button" data-command="cat research.txt">cat research.txt</button></div>
+        <form class="terminal-form" autocomplete="off">
+          <label for="terminal-input"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~$</span></label>
+          <input id="terminal-input" name="command" type="text" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="type a command" aria-describedby="command-output" maxlength="80">
+          <button type="submit" aria-label="Run command">↵</button>
+        </form>
       </div>
-
-      <div class="project-list">
-        <article class="feature-row project">
-          <div class="feature-visual vision-visual" aria-hidden="true">
-            <svg viewBox="0 0 240 150"><rect x="47" y="20" width="146" height="110" rx="3"/><path d="M88 50c10-18 54-17 64 2 11 22-2 56-32 56S77 73 88 50Z"/><path d="M74 35h-13v13M166 35h13v13M74 115H61v-13M166 115h13v-13"/><circle cx="105" cy="66" r="3"/><circle cx="137" cy="66" r="3"/><path d="M109 88c8 5 17 5 24 0"/></svg>
-            <span>vision / age / text</span>
-          </div>
-          <div class="feature-copy">
-            <p class="kicker">Computer vision · November 2025</p>
-            <h3>Facial analysis, age estimation, and OCR</h3>
-            <p>I developed computer vision models for a national government technology competition. The models performed facial analysis, age estimation, and text extraction from scanned documents. The project placed third in the ANIP Benin Kaggle Challenge.</p>
-            <div class="tag-row"><span>PyTorch</span><span>Computer vision</span><span>OCR</span></div>
-          </div>
-        </article>
-
-        <article class="feature-row project">
-          <div class="feature-visual robot-visual" aria-hidden="true">
-            <svg viewBox="0 0 240 150"><path d="M35 119h170"/><rect x="85" y="64" width="70" height="47" rx="8"/><circle cx="105" cy="84" r="6"/><circle cx="135" cy="84" r="6"/><path d="M120 64V43M112 43h16M85 79H66l-16 17M155 79h19l16 17M100 111v16M140 111v16"/><path class="signal" d="M139 49c7-8 7-17 0-25M150 55c13-14 13-29 0-42"/></svg>
-            <span>mentor / integrate / test</span>
-          </div>
-          <div class="feature-copy">
-            <p class="kicker">Robotics mentoring · March 2025–January 2026</p>
-            <h3>TEKBOT Robotics Challenge</h3>
-            <p>I led and mentored the UCAO-TECH team. I also advised university teams from Benin and neighboring countries on ROS, computer vision, system integration, testing, and technical documentation.</p>
-            <div class="tag-row"><span>ROS</span><span>Mentoring</span><span>Systems integration</span></div>
-          </div>
-        </article>
-
-        <article class="feature-row project">
-          <div class="feature-visual game-visual" aria-hidden="true">
-            <svg viewBox="0 0 240 150"><rect x="38" y="14" width="164" height="122"/><rect x="61" y="32" width="118" height="86"/><rect x="84" y="50" width="72" height="50"/><path d="M120 14v36M120 100v36M38 75h46M156 75h46M38 14l46 36M202 14l-46 36M38 136l46-36M202 136l-46-36"/><circle cx="61" cy="32" r="5"/><circle cx="156" cy="75" r="5"/><circle cx="120" cy="118" r="5"/><circle cx="179" cy="118" r="5"/></svg>
-            <span>search / strategy / play</span>
-          </div>
-          <div class="feature-copy">
-            <p class="kicker">Game AI · November 2022</p>
-            <h3>Morabaraba game-playing agent</h3>
-            <p>I co-developed a Python agent that uses minimax search. The agent selects a defensive, winning, or catching strategy based on the game state. The project won first place in the Mify Artificial Intelligence Contest.</p>
-            <div class="tag-row"><span>Python</span><span>Minimax</span><span>Search</span></div>
-            <div class="small-links"><a href="https://github.com/Charlot-DEDJINOU/MIFY-Maic2022-Contest" target="_blank" rel="noopener noreferrer">code ↗</a></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="experience" aria-labelledby="experience-title">
-      <h2 class="section-label" id="experience-title" aria-label="Experience">cat experience.txt</h2>
-      <div class="experience-list">
-        <article><time datetime="2026-08">Aug 2026–May 2028</time><div><h3>M.S. in Engineering Artificial Intelligence</h3><p>Carnegie Mellon University Africa · Kigali, Rwanda</p></div></article>
-        <article><time datetime="2025-03">Mar 2025–Jan 2026</time><div><h3>Robotics Mentor</h3><p>TEKBOT Robotics · UCAO-TECH</p><p class="detail">Mentored teams in ROS, computer vision, software engineering, system integration, and testing.</p></div></article>
-        <article><time datetime="2025-02">Feb–Dec 2025</time><div><h3>Full-Stack Developer, Backend and AI</h3><p>PhytoV · Cotonou, Benin</p><p class="detail">Developed APIs and data services using FastAPI, PostgreSQL, React, and AWS. Integrated language models into REST APIs with more than 90% test coverage.</p></div></article>
-        <article><time datetime="2024-01">Jan–Dec 2024</time><div><h3>Undergraduate Researcher</h3><p>University of Abomey-Calavi · IFRI</p><p class="detail">Developed forecasting and optimization methods for telecommunications sites powered by solar, grid, diesel, and battery sources.</p></div></article>
-        <article><time datetime="2023-08">Aug–Nov 2023</time><div><h3>Backend Software &amp; Data Engineer Intern</h3><p>Rintio · Cotonou, Benin</p><p class="detail">Processed travel data using Spark and MinIO. Developed a FastAPI authentication service with JWT and 97% test coverage.</p></div></article>
-      </div>
-    </section>
-
-    <section class="section skills-section" id="skills" aria-labelledby="skills-title">
-      <h2 class="section-label" id="skills-title" aria-label="Technical skills">cat skills.txt</h2>
-      <div class="skill-grid">
-        <div><h3>Robotics &amp; AI</h3><p>ROS, computer vision, reinforcement learning, robot perception, search-based reasoning</p></div>
-        <div><h3>Machine learning</h3><p>PyTorch, TensorFlow, Scikit-learn, JAX, AutoGluon, Hugging Face</p></div>
-        <div><h3>Engineering</h3><p>Python, C/C++, SQL, JavaScript, FastAPI, React, Docker, AWS</p></div>
-        <div><h3>Data &amp; systems</h3><p>PostgreSQL, MongoDB, Spark, Linux, Git, Elasticsearch</p></div>
-      </div>
-    </section>
-
-    <section class="section service-section" id="service" aria-labelledby="service-title">
-      <h2 class="section-label" id="service-title" aria-label="Community">cat community.txt</h2>
-      <div class="service-copy">
-        <p>I serve as Co-Lead of the iSHEERO Events Commission. I am also a Baobab Platform Ambassador for more than 300 Mastercard Foundation Scholars in Benin and a Student Award Leader for the Duke of Edinburgh’s International Award.</p>
-        <p>I was a Millennium Fellow and Global Admissions Reviewer. I led a campus project on plastic waste and reviewed 57 university applications from Africa, Europe, and Asia.</p>
-      </div>
-    </section>
-
-    <section class="contact-band" id="contact" aria-labelledby="contact-title">
-      <div>
-        <h2 id="contact-title" aria-label="Contact">cat contact.txt</h2>
-        <p>I welcome questions about my research and software engineering work.</p>
-      </div>
-      <div class="contact-addresses">
-        <a class="primary-email" href="mailto:agbaguid@andrew.cmu.edu">agbaguid@andrew.cmu.edu ↗</a>
-        <a href="mailto:guygbaguidi123root@gmail.com">Personal: guygbaguidi123root@gmail.com ↗</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer shell">
-    <span>© <span data-year></span> Ahonakpon Guy Gbaguidi</span>
-    <span>Kigali, Rwanda</span>
-  </footer>
+    </div>
   </div>
-
-  <script src="script.js"></script>
+  <script src="script.js?v=cli-20261005"></script>
 </body>
 </html>
