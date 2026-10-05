@@ -9,6 +9,7 @@ const aliases = { service: 'community', organizations: 'community', work: 'exper
 const completions = ['help', 'ls', 'pwd', 'whoami', 'date', 'theme', 'clear', 'cv', 'github', 'email', ...sections, ...sections.filter(name => name !== 'about').map(name => `cat ${name}.txt`), 'tree projects/'];
 const history = [];
 let historyIndex = 0;
+const scrollBehavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
 
 function setTheme(theme) {
   root.dataset.theme = theme;
@@ -43,7 +44,7 @@ function say(message, error = false) {
 }
 
 function jumpTo(name) {
-  document.getElementById(name)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.getElementById(name)?.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
   say(`~/${name === 'projects' ? 'projects/' : `${name}.txt`}`);
 }
 
@@ -63,7 +64,7 @@ function runCommand(raw) {
       say('Commands: help · ls · whoami · cat <file>.txt · tree projects/ · pwd · date · theme · cv · github · email · clear. Use ↑ for history and Tab to complete.');
       break;
     case 'ls': case 'ls -l': case 'ls -la':
-      document.getElementById('directory')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('directory')?.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
       say('8 entries in ~/portfolio');
       break;
     case 'pwd': say('/home/guy/portfolio'); break;
@@ -77,7 +78,7 @@ function runCommand(raw) {
     case 'email':
       window.location.href = 'mailto:agbaguid@andrew.cmu.edu'; say('Opening mail client…'); break;
     case 'clear':
-      window.scrollTo({ top: 0, behavior: 'smooth' }); say(''); break;
+      window.scrollTo({ top: 0, behavior: scrollBehavior }); say(''); break;
     default:
       say(`${raw.trim()}: command not found. Type help for available commands.`, true);
   }
