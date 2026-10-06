@@ -4,7 +4,7 @@ const themeMeta = document.querySelector('meta[name="theme-color"]');
 const form = document.querySelector('.terminal-form');
 const input = document.querySelector('#terminal-input');
 const output = document.querySelector('#command-output');
-const sections = ['about', 'news', 'research', 'projects', 'experience', 'skills', 'community', 'contact'];
+const sections = ['about', 'news', 'research', 'projects', 'experience', 'skills', 'community', 'contact', 'reading', 'papers', 'books'];
 const aliases = { service: 'community', organizations: 'community', work: 'experience', home: 'about' };
 const completions = ['help', 'ls', 'pwd', 'whoami', 'date', 'theme', 'clear', 'cv', 'github', 'email', ...sections, ...sections.filter(name => name !== 'about').map(name => `cat ${name}.txt`), 'tree projects/'];
 const history = [];
@@ -56,16 +56,23 @@ function runCommand(raw) {
 
   let target = command.replace(/^(cat|cd|open)\s+/, '').replace(/^\.\//, '').replace(/^~\//, '').replace(/\/$/, '').replace(/\.txt$/, '');
   target = aliases[target] || target;
-  if (sections.includes(target)) { jumpTo(target); return; }
+  if (sections.includes(target)) {
+    if (!document.getElementById(target) && ['reading', 'papers', 'books'].includes(target)) {
+      window.location.href = `reading.html#${target}`;
+      return;
+    }
+    jumpTo(target);
+    return;
+  }
   if (command === 'tree' || command === 'tree projects' || command === 'tree projects/') { jumpTo('projects'); return; }
 
   switch (command) {
     case 'help':
-      say('Commands: help · ls · whoami · cat <file>.txt · tree projects/ · pwd · date · theme · cv · github · email · clear. Use ↑ for history and Tab to complete.');
+      say('Commands: help · ls · whoami · cat <file>.txt · papers · books · tree projects/ · pwd · date · theme · cv · github · email · clear. Use ↑ for history and Tab to complete.');
       break;
     case 'ls': case 'ls -l': case 'ls -la':
       document.getElementById('directory')?.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
-      say('8 entries in ~/portfolio');
+      say('9 entries in ~/portfolio');
       break;
     case 'pwd': say('/home/guy/portfolio'); break;
     case 'whoami': jumpTo('about'); break;

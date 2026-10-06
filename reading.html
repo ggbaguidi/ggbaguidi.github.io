@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Papers and books on AI, reasoning, robotics, and related ideas that Ahonakpon Guy Gbaguidi finds interesting.">
+  <meta name="theme-color" content="#1b1b1b">
+  <meta property="og:title" content="Reading notes — Ahonakpon Guy Gbaguidi">
+  <meta property="og:description" content="Papers and books worth thinking about.">
+  <meta property="og:type" content="website">
+  <title>Reading notes — Ahonakpon Guy Gbaguidi</title>
+  <link rel="icon" href="data/favicon.svg" type="image/svg+xml">
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark'; } catch (_) {}</script>
+  <link rel="stylesheet" href="style.css?v=cli-20261006-reading1">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="terminal">
+    <header class="terminal-header">
+      <div class="header-inner">
+        <a class="terminal-title" href="index.html"><span class="header-glyph" aria-hidden="true">_</span> guy@portfolio<span class="header-path">: ~/reading</span></a>
+        <div class="header-actions">
+          <a href="index.html" class="theme-toggle">home/</a>
+          <button class="theme-toggle" type="button" aria-label="Switch to light theme">theme: dark</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="transcript">
+      <div class="welcome">
+        <p>Last login: <time id="session-date"></time> on portfolio</p>
+        <p>Reading notes: ideas I want to remember and return to.</p>
+      </div>
+
+      <section class="terminal-section identity" id="reading" aria-labelledby="reading-title">
+        <h1 id="reading-title">reading/</h1>
+        <p class="output-muted">papers and books that I find interesting</p>
+      </section>
+
+      <section class="terminal-section" id="papers" aria-labelledby="papers-title">
+        <h2 class="prompt" id="papers-title"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~/reading$</span> cat papers.txt</h2>
+        <article class="entry">
+          <p class="entry-meta">paper · 1991 · Stuart Russell and Eric Wefald</p>
+          <h3>Principles of metareasoning</h3>
+          <p class="entry-meta">Artificial Intelligence, 49(1–3), 361–395 · DOI: 10.1016/0004-3702(91)90015-C</p>
+          <p><strong>Summary:</strong> The paper treats computation as an action an agent can choose. Since thinking takes limited time and its outcome is uncertain, an agent can use probability and decision theory to estimate whether more computation is likely to improve its next real-world decision. The useful question is not simply how to reason, but when further reasoning is worth its cost.</p>
+          <p><strong>Why it stands out:</strong> It connects resource-aware reasoning to action: an intelligent system should spend effort where it can make a meaningful difference to what it does.</p>
+          <p class="entry-links"><a href="https://www.sciencedirect.com/science/article/pii/000437029190015C" target="_blank" rel="noopener noreferrer">[paper ↗]</a> <a href="https://doi.org/10.1016/0004-3702(91)90015-C" target="_blank" rel="noopener noreferrer">[doi ↗]</a></p>
+        </article>
+      </section>
+
+      <section class="terminal-section" id="books" aria-labelledby="books-title">
+        <h2 class="prompt" id="books-title"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~/reading$</span> cat books.txt</h2>
+        <p class="output-muted"># book notes will appear here</p>
+      </section>
+
+      <footer class="terminal-footer"><a href="index.html">← cd ~/portfolio</a><span>guy@portfolio:~/reading$ exit</span></footer>
+    </main>
+
+    <div class="command-dock" role="region" aria-label="Terminal command line">
+      <div class="command-inner">
+        <div class="command-output" id="command-output" role="status" aria-live="polite">Try <button type="button" data-command="help">help</button>, <button type="button" data-command="papers">papers</button>, or <button type="button" data-command="books">books</button></div>
+        <form class="terminal-form" autocomplete="off">
+          <label for="terminal-input"><span class="prompt-user">guy@portfolio</span><span class="prompt-path">:~/reading$</span></label>
+          <input id="terminal-input" name="command" type="text" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="type a command" aria-describedby="command-output" maxlength="80">
+          <button type="submit" aria-label="Run command">↵</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="script.js?v=cli-20261006-reading1"></script>
+</body>
+</html>
